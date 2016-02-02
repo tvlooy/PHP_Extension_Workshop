@@ -34,10 +34,10 @@ PHP_MINIT_FUNCTION(myext)
 
     INIT_CLASS_ENTRY(ce, "MyClass", NULL);
     ce.create_object = NULL;
-    ce_MyClass = zend_register_internal_class(&ce TSRMLS_CC);
+    ce_MyClass = zend_register_internal_class(&ce);
 
     /* Constants declaration */
-    zend_declare_class_constant_long(ce_MyClass, ZEND_STRL("ULTIMATE_ANSWER"), 42 TSRMLS_CC);
+    zend_declare_class_constant_long(ce_MyClass, ZEND_STRL("ULTIMATE_ANSWER"), 42);
 
     return SUCCESS;
 }
